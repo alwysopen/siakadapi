@@ -5,5 +5,30 @@
   "paginate": {
     "default": 10,
     "max": 50
+  },
+  "mysql": "mysql://root:@localhost:3306/sistemsekolah",
+  "authentication": {
+    "secret": "857792456eb8b022e386bdfff2f865c9a58ce10b9a5ea647bb5eb20a9ba89833de6eba9a1dbe00aeb66d43a91f4792c23ce7cfc72cd33b80c4c0566add0d4ed6a01643c30fb3a8ecca34937674f77de6fefbc4c282ff9b4815582455aac3d86df0f4046cb27b567113aa93e92214c2fcd9160536dcc2b969f9075044d5f8ee662cf64a99511bc3c9ca1e853c58b3afb5531b616a6b92ceadcb5d22d413b1e7c74ec57c7ea1950a1e00a5bf263a6b005ca89f27143014e0f6a7a744ccb6cc5d45eef45beb83ca0380726ba583272ff81fe4014b0fb265f0143897a4f714da99d610f4b5b980ea4ef4d431777f4d8ecf43cf024a91638db94a5fc616a100fae477",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
   }
 }
