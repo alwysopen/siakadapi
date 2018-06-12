@@ -10,7 +10,6 @@ module.exports = function (app) {
   const options = {
     name: 'kelas',
     Model,
-    paginate
   };
 
   // Initialize our service with any options it requires
