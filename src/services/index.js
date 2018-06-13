@@ -5,6 +5,7 @@ const userdetail = require('./userdetail/userdetail.service.js');
 const kelas = require('./kelas/kelas.service.js');
 const siswa = require('./siswa/siswa.service.js');
 const databuku = require('./databuku/databuku.service.js');
+const jadwalpelajaran = require('./jadwalpelajaran/jadwalpelajaran.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(dataguru);
@@ -14,4 +15,5 @@ module.exports = function (app) {
   app.configure(kelas);
   app.configure(siswa);
   app.configure(databuku);
+  app.configure(jadwalpelajaran);
 };
