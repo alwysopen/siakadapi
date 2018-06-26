@@ -1,10 +1,11 @@
 
+const { authenticate } = require('@feathersjs/authentication').hooks;
 
 const kelashook = require('../../hooks/kelashook');
 
 module.exports = {
   before: {
-    all: [],
+    all: [authenticate('jwt')],
     find: [kelashook()],
     get: [kelashook()],
     create: [],

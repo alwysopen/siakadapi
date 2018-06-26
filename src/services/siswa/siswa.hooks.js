@@ -4,7 +4,7 @@ const datasiswa = require('../../hooks/datasiswa');
 
 module.exports = {
   before: {
-    all: [ ],
+    all: [ authenticate('jwt')],
     find: [datasiswa()],
     get: [datasiswa()],
     create: [],
