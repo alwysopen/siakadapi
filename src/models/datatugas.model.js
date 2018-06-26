@@ -6,7 +6,15 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const datatugas = sequelizeClient.define('datatugas', {
-    text: {
+    judul: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    deskripsi: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    attachment: {
       type: DataTypes.STRING,
       allowNull: false
     }
@@ -21,6 +29,12 @@ module.exports = function (app) {
   // eslint-disable-next-line no-unused-vars
   datatugas.associate = function (models) {
     // Define associations here
+    const Pemain = models.sekolah;
+    const Timajah  = models.datatugas;
+    Timajah.belongsTo(Pemain,{targetKey:'idsekolah',foreignKey:'idsekolah'});
+    const PemainNoob = models.kelas;
+    Timajah.belongsTo(PemainNoob,{targetKey:'id',foreignKey:'idkelas'});
+ 
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
