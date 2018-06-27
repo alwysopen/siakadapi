@@ -5,16 +5,22 @@ const hooks = require('./datatugas.hooks');
 
 module.exports = function (app) {
   const Model = createModel(app);
-  const paginate = app.get('paginate');
-
   const options = {
     name: 'datatugas',
-    Model,
-    paginate
+    Model
   };
-
+  const multer = require('multer');
+  var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/attachmenttugas')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);        
+    }
+  })
+  const upload = multer({ storage: storage});
   // Initialize our service with any options it requires
-  app.use('/datatugas', createService(options));
+  app.use('/datatugas', upload.single('attachment'),createService(options));
 
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('datatugas');

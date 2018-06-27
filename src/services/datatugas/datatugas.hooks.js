@@ -1,10 +1,12 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
+const datatugashooks = require('../../hooks/datatugashooks');
+
 module.exports = {
   before: {
     all: [ authenticate('jwt') ],
-    find: [],
-    get: [],
+    find: [datatugashooks()],
+    get: [datatugashooks()],
     create: [],
     update: [],
     patch: [],
