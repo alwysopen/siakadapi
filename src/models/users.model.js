@@ -14,6 +14,22 @@ module.exports = function (app) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    level: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    playerid: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    statususer: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   }, {
     hooks: {
       beforeCount(options) {
