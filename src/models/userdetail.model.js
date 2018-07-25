@@ -40,6 +40,8 @@ module.exports = function (app) {
     const Pemain = models.sekolah;
     const Timajah  = models.userdetail;
     Timajah.belongsTo(Pemain,{targetKey:'idsekolah',foreignKey:'idsekolah'});
+    const user = models.users;
+    Timajah.belongsTo(user,{targetKey:'id',foreignKey:'iduser'})
   };
 
   return userdetail;

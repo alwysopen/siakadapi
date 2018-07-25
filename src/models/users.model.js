@@ -45,9 +45,6 @@ module.exports = function (app) {
     const Player = models.sekolah;
     const Team  = models.users;
     Team.belongsTo(Player,{targetKey:'idsekolah', foreignKey:'idsekolah'});
-    const PlayerNOOB = models.userdetail;
-    const TeamNOOB  = models.users;
-    TeamNOOB.belongsTo(PlayerNOOB,{targetKey:'id', foreignKey:'iduserdetail'});
   };
 
   return users;
