@@ -37,9 +37,7 @@ module.exports = function (app) {
     const Player = models.kelas;
     const Team  = models.userdetail;
     Team.belongsTo(Player,{targetKey:'id',foreignKey:'idkelas'});
-    const Pemain = models.sekolah;
     const Timajah  = models.userdetail;
-    Timajah.belongsTo(Pemain,{targetKey:'idsekolah',foreignKey:'idsekolah'});
     const user = models.users;
     Timajah.belongsTo(user,{targetKey:'id',foreignKey:'iduser'})
   };

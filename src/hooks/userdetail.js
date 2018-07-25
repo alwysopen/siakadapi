@@ -8,7 +8,6 @@ module.exports = function (options = {}) {
       raw: false,
       include: [
         hook.app.services.users.Model,
-        hook.app.services.datasekolah.Model,
         hook.app.services.kelas.Model
       ]
     }; 
