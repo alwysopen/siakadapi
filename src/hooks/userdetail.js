@@ -7,7 +7,7 @@ module.exports = function (options = {}) {
     hook.params.sequelize = {
       raw: false,
       include: [
-        hook.app.services.userdetail.Model,
+        hook.app.services.users.Model,
         hook.app.services.datasekolah.Model,
         hook.app.services.kelas.Model
       ]

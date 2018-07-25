@@ -4,7 +4,7 @@ const userdetail = require('../../hooks/userdetail');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [],
     find: [userdetail()],
     get: [userdetail()],
     create: [],

@@ -10,10 +10,6 @@ module.exports = function (app) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    idsekolah: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     alamat: {
       type: DataTypes.TEXT,
       allowNull: false
